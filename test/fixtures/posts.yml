@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  candidate: MyString
+  reason: MyText
+  email: MyString
+
+two:
+  candidate: MyString
+  reason: MyText
+  email: MyString
