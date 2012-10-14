@@ -12,6 +12,16 @@
   <% end %>
   <span class="sentence">I'm voting for</span>
   <div class="field">
+    <div class="hidden">
+      <%= f.radio_button :candidate, "Mitt Romney" %>
+      <%= f.label :candidate_romney, "Mitt Romney" %>
+      <%= f.radio_button :candidate, "Barack Obama" %>
+      <%= f.label :candidate_obama, "Barack Obama" %>
+      <%= f.radio_button :candidate, "Gary Johnson" %>
+      <%= f.label :candidate_obama, "Gary Johnson" %>
+      <%= f.radio_button :candidate, "Nobody" %>
+      <%= f.label :candidate_obama, "Nobody" %>
+    </div>
     <ul>
       <li class="candidate" id="obama">This dude</li>
       <li class="candidate" id="romney">This dude</li>
