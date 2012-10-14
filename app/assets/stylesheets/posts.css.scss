@@ -1,3 +1,27 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sentence {
+	font-size: 40px;
+}
+
+.post_user_attributes_email {
+	height: 40px;
+}
+
+.candidate {
+	height: 200px;
+
+	background-color: #5fa9ec;
+	display: inline-block;
+	width: 20%;
+}
+
+.reason {
+	width: 80%;
+}
+
+.email {
+	height: 20px;
+}
