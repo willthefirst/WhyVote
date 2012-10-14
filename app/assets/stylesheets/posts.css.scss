@@ -2,26 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.sentence {
-	font-size: 40px;
-}
+/* @group homepage */
 
-.post_user_attributes_email {
-	height: 40px;
-}
+	.sentence {
+		font-size: 40px;
+	}
 
-.candidate {
-	height: 200px;
+	.post_user_attributes_email {
+		height: 40px;
+	}
 
-	background-color: #5fa9ec;
-	display: inline-block;
-	width: 20%;
-}
+	.candidate {
+		height: 200px;
 
-.reason {
-	width: 80%;
-}
+		background-color: #5fa9ec;
+		display: inline-block;
+		width: 20%;
+	}
 
-.email {
-	height: 20px;
-}
+	.reason {
+		width: 80%;
+	}
+
+	.email {
+		height: 20px;
+	}
+
+/* @end */	
+
+/* @group results page */
+
+	.submission {
+		background-color: gray;
+
+		display: block;
+		margin: 0 auto 20px;
+		width: 80%;
+		text-align: left;
+	}
+
+/* @end */
