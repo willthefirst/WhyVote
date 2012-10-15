@@ -6,6 +6,7 @@
 
 	.sentence {
 		font-size: 40px;
+		line-height: 40px;
 	}
 
 	.post_user_attributes_email {
@@ -13,11 +14,12 @@
 	}
 
 	.candidate {
-		height: 200px;
-
-		background-color: #5fa9ec;
 		display: inline-block;
 		width: 20%;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	.reason {
@@ -27,6 +29,8 @@
 	.email {
 		height: 20px;
 	}
+
+
 
 /* @end */	
 
