@@ -23,5 +23,8 @@ javascripts_dir = "javascripts"
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
-#fonts
-config.assets.paths << Rails.root.join("app", "assets", "fonts")
+# Add the fonts path
+config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+# Precompile additional assets
+config.assets.precompile += %w( .svg .eot .woff .ttf )
