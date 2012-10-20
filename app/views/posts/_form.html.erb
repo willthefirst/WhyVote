@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <span class="sentence">I'm voting for</span>
+  <p class="sentence">I'm voting for</p>
   <div class="field">
     <div class="hidden">
       <%= f.radio_button :candidate, "Mitt Romney" %>
@@ -29,7 +29,7 @@
       <li class="candidate" id="nobody"><img src="images/derek.jpg" alt=""></li>
     </ul>
   </div>
-  <span class="sentence">because</span>
+  <p class="sentence">because</p>
   <div class="field">
     <%= f.text_area :reason, :class => "reason" %>
   </div>

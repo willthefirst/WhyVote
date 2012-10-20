@@ -5,8 +5,10 @@
 /* @group homepage */
 
 	.sentence {
-		font-size: 40px;
-		line-height: 40px;
+		font-size: 52px;
+		line-height: 52px;
+		font-weight: bold;
+		margin-bottom: 20px;
 	}
 
 	.post_user_attributes_email {
@@ -16,21 +18,35 @@
 	.candidate {
 		display: inline-block;
 		width: 20%;
+		margin: 0 4px;
+		cursor: pointer;
 
 		img {
+			border-radius: 100px;
 			width: 100%;
 		}
 	}
 
+	.reason, .email {
+		border: 1px dashed rgb(11, 88, 187);
+		text-align: center;
+
+		&:focus {
+			outline: none;
+		};
+	}
+
 	.reason {
-		width: 80%;
+		border-radius: 25%;
+		font-size: 24px;
+		width: 40%;
+		height: 100px;
+
 	}
 
 	.email {
 		height: 20px;
 	}
-
-
 
 /* @end */	
 
