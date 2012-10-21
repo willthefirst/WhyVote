@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='why-vote'>
 <head>
   <title>Explain your vote</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -9,7 +9,6 @@
 <body>
 	<div id="global-wrapper">
 		<h1>Explain your <span class="big red">vote.</span></h1>
-		<%= yield %>
-	</div>
+		<div ng-view></div>
 </body>
 </html>
