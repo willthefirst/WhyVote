@@ -31,13 +31,10 @@
   </div>
   <p class="sentence">because</p>
   <div class="field">
-    <%= f.text_area :reason, :class => "reason" %>
+    <textarea cols="20" rows="10" class="reason">No more than 200 words.</textarea>
   </div>
   <div class="field">
-    <%= f.fields_for :user do |ff| %>
-      <%= ff.label :email, "Your Email" %>
-      <%= ff.text_area :email, :class => "email" %>
-    <% end %>
+    <input type="textarea" class="email" placeholder="your_email@example.com">
   </div>  
   <div class="actions">
     <%= f.submit %>
