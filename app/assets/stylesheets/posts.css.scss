@@ -28,7 +28,7 @@
 	}
 
 	.reason, .email {
-		border: 1px dashed rgb(102, 102, 102);
+		border: 2px dashed rgb(11, 88, 187);
 		color: #000;
 		font-size: 26px;
 		line-height: 34px;
@@ -57,12 +57,30 @@
 /* @group results page */
 
 	.submission {
-		background-color: gray;
-
+		outline: 2px dashed rgb(11, 88, 187);
+		padding: 10px;
 		display: block;
 		margin: 0 auto 20px;
 		width: 80%;
 		text-align: left;
+
+		article {
+			vertical-align: middle;
+			font-size: 24px;
+			margin-left: 60px;
+		}
 	}
+
+	.upvote {
+		float: left;
+		vertical-align: middle;
+		margin-right: 10px;
+
+		a {
+			display: block;
+		}
+	}
+
+
 
 /* @end */
