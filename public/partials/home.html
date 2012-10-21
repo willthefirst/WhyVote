@@ -10,14 +10,13 @@
   </div>
   <p class="sentence">because</p>
   <div class="field">
-    <textarea class="reason" cols="40" id="post_reason" name="post[reason]" rows="20" ng-model='reason'></textarea>
+    <textarea cols="20" rows="10" class="reason">No more than 200 words.</textarea>
   </div>
   <div class="field">
-    
-      <label for="post_user_attributes_email">Your Email</label>
-      <textarea class="email" cols="40" id="post_user_attributes_email" name="post[user_attributes][email]" rows="20" ng-model='email'></textarea>
+    <input type="textarea" name="post[user_attributes][email]"class="email" ng-model='email' placeholder="your_email@example.com">
   </div>  
   <div class="actions">
     <input name="commit" type="submit" value="Create Post">
   </div>
 </form>
+
