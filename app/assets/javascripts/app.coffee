@@ -5,6 +5,8 @@ HomeController = ($scope, $window, $location, $http) ->
     $scope.candidate = candidate
     angular.element('.candidate').removeClass('selected')
     angular.element('#' + candidate).addClass('selected')
+    angular.element('.candidate').hide()
+    angular.element('.selected').show()
 
   $scope.submit = ->
     $http({

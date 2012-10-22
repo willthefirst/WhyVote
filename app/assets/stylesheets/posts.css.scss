@@ -5,9 +5,8 @@
 /* @group homepage */
 
 	.sentence {
-		font-size: 52px;
+		font-size:40px;
 		line-height: 52px;
-		font-weight: bold;
 		margin-bottom: 20px;
 	}
 
@@ -16,12 +15,14 @@
 	}
 
 	.candidate {
+		-webkit-transition: all 1s linear;
 		display: inline-block;
 		width: 20%;
 		margin: 0 4px;
 		cursor: pointer;
 
 		img {
+			border: 1px solid #000;
 			border-radius: 100px;
 			width: 100%;
 		}
@@ -49,6 +50,7 @@
 	.email {
 		height: 40px;
 		width: 50%;
+		min-width: 394px;
 		text-align: center;
 	}
 
