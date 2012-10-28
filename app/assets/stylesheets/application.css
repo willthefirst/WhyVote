@@ -99,6 +99,27 @@
 		display: none;
 	}
 
+	.clearfix:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+	 
+	.clearfix {
+		display: inline-block;
+	}
+	 
+	html[xmlns] .clearfix {
+		display: block;
+	}
+	 
+	* html .clearfix {
+		height: 1%;
+	}
+
 	h1 {
 		font-family: 'american_purposeregular', verdana;
 		font-size: 60px;
@@ -125,7 +146,8 @@
  /* @group containers*/
 
  	#global-wrapper {
- 		min-width: 500px;
+ 		min-width: 300px;
+ 		width: 90%;
  		max-width: 900px;
  		padding-top: 10px;
  		margin: auto;

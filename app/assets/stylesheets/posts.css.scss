@@ -5,7 +5,7 @@
 /* @group homepage */
 
 	.sentence {
-		font-size:40px;
+		font-size: 40px;
 		line-height: 52px;
 		margin-bottom: 20px;
 	}
@@ -17,23 +17,34 @@
 	.candidate {
 		-webkit-transition: all 1s linear;
 		display: inline-block;
-		width: 20%;
+		width: 200px;
 		margin: 0 4px;
 		cursor: pointer;
 
 		img {
-			border: 1px solid #000;
+			border: 2px solid #000;
 			border-radius: 100px;
 			width: 100%;
+			&:hover {
+				border: 2px solid #ff0000;
+			}
 		}
+
+
+	}
+
+	.candidate-row {
+		display: inline-block;
 	}
 
 	.reason, .email {
+		box-sizing: border-box;
 		border: 2px dashed rgb(11, 88, 187);
 		color: #000;
 		font-size: 26px;
 		line-height: 34px;
 		font-family: Georgia, serif;
+		width: 100%;
 
 		&:focus {
 			outline: none;
@@ -42,16 +53,33 @@
 
 	.reason {
 		margin-bottom: 20px;
-		width: 80%;
 		padding: 20px;
 		box-sizing: border-box;
 	}
 
 	.email {
 		height: 40px;
-		width: 50%;
-		min-width: 394px;
+		min-width: 350px;
 		text-align: center;
+		width: 80%;
+	}
+
+	.submit {
+		border: 2px solid #000;
+		font-family:'american_purposeregular';
+		font-size: 30px;
+		padding: 10px;
+		height: 150px;
+		min-width: 150px;
+		border-radius: 75px;
+		cursor: pointer;
+		color: #fff;
+		background-color: #0b58bb;
+		margin-top: 15px;
+
+		&:hover {
+			border: 5px solid #ff0000;
+		}
 	}
 
 /* @end */	
@@ -59,14 +87,13 @@
 /* @group results page */
 
 	.submission {
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
 		display: block;
 		margin: 0 auto 20px;
 		outline: 2px dashed rgb(11, 88, 187);
 		padding: 10px;
 		position: relative;
 		text-align: left;
-		width: 80%;
 
 		article {
 			font-size: 24px;
