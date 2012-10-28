@@ -41,17 +41,19 @@ class PostsController < ApplicationController
   def create
     # logger.debug"ERROR LOG = #{@user}"
 
-    @post = Post.new(params[:post])
-    @user = @post.build_user(params[:email])
-    @user.save
+    post = Post.new params[:post]
+    user = User.find_or_create_by_fingerprint params[:user][:fingerprint]
+    post.legit = false if user.posts.first
+    post.user = user
+    user.save
     
     respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render json: @post, status: :created, location: @post }
+      if post.save
+        format.html { redirect_to post, notice: 'Post was successfully created.' }
+        format.json { render json: post, status: :created, location: post }
       else
         format.html { render action: "new" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: post.errors, status: :unprocessable_entity }
       end
     end
   end

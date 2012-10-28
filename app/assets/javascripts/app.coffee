@@ -14,6 +14,7 @@ HomeController = ($scope, $window, $location, $http) ->
       url: '/posts'
       data: $.param {
         post: { reason: @reason, candidate: @candidate }
+        user: { fingerprint: jQuery.fingerprint() }
       }
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).success (rsp, status, headers) ->
