@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	acts_as_voter
-	attr_accessible :email
-	belongs_to :post
+	attr_accessible :email, :fingerprint
+	has_many :posts
+  has_many :votes
 end
