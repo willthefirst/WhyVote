@@ -1,7 +1,7 @@
 require 'statistics2'
 
 class Post < ActiveRecord::Base
-  attr_accessible :candidate, :reason, :fingerprint, :popularity, :valid, :user_attributes
+  attr_accessible :candidate, :reason, :popularity, :legit, :user_attributes
   has_many :votes
   belongs_to :user
   accepts_nested_attributes_for :user, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
