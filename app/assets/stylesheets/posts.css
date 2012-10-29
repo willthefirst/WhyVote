@@ -62,25 +62,51 @@
 
 /* @end */
 /* @group results page */
+.disclaimer {
+  outline: 2px dashed #0b58bb;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 20px; }
+
 .submission {
   -webkit-box-sizing: border-box;
   display: block;
   margin: 0 auto 20px;
-  outline: 2px dashed #0b58bb;
   padding: 10px;
   position: relative;
-  text-align: left; }
+  text-align: left;
+  color: black; }
   .submission article {
-    font-size: 24px;
-    margin-left: 72px; }
+    font-size: 12px;
+    margin-left: 72px;
+    color: #000; }
+
+.obama .pres {
+  color: #0b58bb;
+  font-size: 20px; }
+
+.romney .pres {
+  color: #ff0000;
+  font-size: 20px; }
+
+.johnson .pres {
+  color: #f1b025;
+  font-size: 20px; }
+
+.nobody .pres {
+  color: #928f87;
+  font-size: 20px; }
 
 .upvote {
+  display: block;
   float: left;
   margin: 0 8px;
   margin-top: -26px;
   position: absolute;
   top: 50%; }
   .upvote a {
+    -webkit-transition: all .2s linear;
     border-radius: 25px;
     border: 1px solid #0b58bb;
     display: block;
@@ -89,7 +115,12 @@
     .upvote a:hover {
       background-color: inherit;
       color: #000;
-      font-weight: bold; }
+      font-weight: bold;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg); }
 
 .votes {
   left: 3px;

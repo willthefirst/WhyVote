@@ -28,3 +28,20 @@ angular.module('why-vote', ['ngCookies'])
     ).otherwise redirectTo: '/'
     $locationProvider.html5Mode true
   ])
+
+$(document).ready -> 
+  VOTE =
+    init: ->
+      @upvote()
+
+    upvote: ->
+      $button = $('.votes')
+      old = $button.html()
+      $('.upvote').on
+        mouseenter: ->
+          $button.html('<--')
+
+        mouseleave: ->
+          $button.html(old)
+
+  VOTE.init()

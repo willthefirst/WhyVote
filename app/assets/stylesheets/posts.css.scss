@@ -84,22 +84,60 @@
 
 /* @group results page */
 
+	.disclaimer {
+		outline: 2px dashed #0b58bb;
+		width: 80%;
+		margin: auto;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+
 	.submission {
 		-webkit-box-sizing: border-box;
 		display: block;
 		margin: 0 auto 20px;
-		outline: 2px dashed rgb(11, 88, 187);
 		padding: 10px;
 		position: relative;
 		text-align: left;
+		color: black;
 
 		article {
-			font-size: 24px;
+			font-size: 12px;
 			margin-left: 72px;
+			color: #000;
+		}
+	}
+
+	.obama {
+		.pres {
+			color: #0b58bb;
+			font-size: 20px;
+		}
+	}
+
+	.romney {
+		.pres {
+			color: #ff0000;
+			font-size: 20px;
+		}
+	}
+
+	.johnson {
+		.pres {
+			color: rgb(241, 176, 37);
+			font-size: 20px;
+		}
+	}
+
+	.nobody {
+		.pres {
+			color: rgb(146, 143, 135);
+			font-size: 20px;
 		}
 	}
 
 	.upvote {
+		display: block;
 		float: left;
 		margin: 0 8px;
 		margin-top: -26px;
@@ -107,6 +145,7 @@
 		top: 50%;
 
 		a {
+			-webkit-transition: all .2s linear;
 			border-radius: 25px;
 			border: 1px solid #0b58bb;
 			display: block;
@@ -117,6 +156,11 @@
 				background-color: inherit;
 				color: #000;
 				font-weight: bold;
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
 			}
 		}
 	}
