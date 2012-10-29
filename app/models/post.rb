@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :user, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
-  def ci_lower_bound(pos, n, confidence)
+  def self.ci_lower_bound(pos, n, confidence)
     return 0 if n == 0
     z = Statistics2.pnormaldist(1-(1-confidence)/2)
     phat = 1.0*pos/n

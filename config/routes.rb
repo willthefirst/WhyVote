@@ -6,6 +6,8 @@ Vote3::Application.routes.draw do
     end
   end
 
+  post '/vote' => 'posts#vote'
+
   root :to => 'posts#new'
 
 end
