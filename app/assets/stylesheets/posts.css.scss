@@ -16,8 +16,12 @@
 
 	.candidate {
 		-webkit-transition: all .1s linear;
+		-moz-transition: all .1s linear;
+		-o-transition: all .1s linear;
+		-ms-transition: all .1s linear;
+		transition: all .1s linear;
 		display: inline-block;
-		width: 200px;
+		width: 190px;
 		margin: 0 12px;
 		cursor: pointer;
 		color: #fff;
@@ -33,7 +37,7 @@
 
 		img {
 			border: 2px solid #000;
-			border-radius: 100px;
+			border-radius: 95px;
 			width: 100%;
 			&:hover {
 				border: 2px solid #ff0000;
@@ -46,6 +50,10 @@
 	}
 
 	.reason, .email {
+		-webkit-box-sizing: border-box;
+		-moz-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
 		box-sizing: border-box;
 		border: 2px dashed rgb(11, 88, 187);
 		color: #000;
@@ -62,8 +70,11 @@
 	.reason {
 		margin-bottom: 20px;
 		padding: 20px;
-		box-sizing: border-box;
-	}
+		-webkit-box-sizing: border-box;
+		-moz-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;	}
 
 	.email {
 		height: 40px;
@@ -94,9 +105,49 @@
 
 /* @group results page */
 
+	.disclaimer {
+		outline: 2px dashed #0b58bb;
+		width: 80%;
+		margin: auto;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+
+	.sort li {
+		display: inline-block;
+		font-size: 14px;
+		line-height: 14px;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+
+		a {
+			border-radius: 50px;
+			border: 2px solid #0b58bb;
+			width: 100px;
+			padding: 6px;
+			color: inherit;
+			display: block;
+			margin-left: 12px;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #0b58bb;
+				color: white;
+			}
+
+			@media screen and (max-width:500px) {
+				width: 80px;
+				font-size: 12px;
+			}
+		}
+	}
+
 	.submission {
 		-webkit-box-sizing: border-box;
-		display: block;
+		-moz-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;		display: block;
 		margin: 0 auto 20px;
 		outline: 2px dashed rgb(11, 88, 187);
 		padding: 10px;
@@ -117,6 +168,14 @@
 		top: 50%;
 
 		a {
+<<<<<<< HEAD
+=======
+			-webkit-transition: all .2s linear;
+			-moz-transition: all .2s linear;
+			-o-transition: all .2s linear;
+			-ms-transition: all .2s linear;
+			transition: all .2s linear;
+>>>>>>> added sorting buttons and some responsive elements
 			border-radius: 25px;
 			border: 1px solid #0b58bb;
 			display: block;
@@ -138,7 +197,5 @@
 		top: 17px;
 		width: 46px;
 	}
-
-
 
 /* @end */
