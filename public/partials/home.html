@@ -1,15 +1,27 @@
-<section id="submit" style="display:none">
+<section id="submit">
 	<form class="new_post" id="new_post" ng-submit='submit()'>
 		<p class="sentence">I'm voting for</p>
 		<div class="field">
 			<ul>
 				<div class="candidate-row">
-					<li class="candidate" id="obama" ng-click='select_candidate("obama")'><img src="images/obama.jpg" alt=""></li>
-					<li class="candidate" id="romney" ng-click='select_candidate("romney")'><img src="images/romney.jpg" alt=""></li>
+					<li class="candidate" id="obama" ng-click='select_candidate("obama")'>
+						<img src="images/obama.jpg" alt="Obama">
+						<span class="candidate-name">Obama</span>
+					</li>
+					<li class="candidate" id="romney" ng-click='select_candidate("romney")'>
+						<img src="images/romney.jpg" alt="Romney">
+						<span class="candidate-name">Romney</span>
+					</li>
 				</div>
 				<div class="candidate-row">
-					<li class="candidate" id="johnson" ng-click='select_candidate("johnson")'><img src="images/gary.jpg" alt=""></li>
-					<li class="candidate" id="nobody" ng-click='select_candidate("nobody")'><img src="images/derek.jpg" alt=""></li>
+					<li class="candidate" id="johnson" ng-click='select_candidate("johnson")'>
+						<img src="images/gary.jpg" alt="Johnson">
+						<span class="candidate-name">Johnson</span>
+					</li>
+					<li class="candidate" id="nobody" ng-click='select_candidate("nobody")'>
+						<img src="images/derek.jpg" alt="Nobody">
+						<span class="candidate-name">Nobody</span>
+					</li>
 				</div>
 			</ul>
 		</div>
