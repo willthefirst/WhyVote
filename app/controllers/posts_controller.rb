@@ -61,7 +61,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     # logger.debug"ERROR LOG = #{@user}"
-    if params[:post][:candidate].empty?
+    if params[:post][:candidate].empty? || params[:post][:reason].empty?
       render json: { success: false }
     else
       post = Post.new params[:post]
