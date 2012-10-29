@@ -61,21 +61,25 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     # logger.debug"ERROR LOG = #{@user}"
-
-    post = Post.new params[:post]
-    user = User.find_or_create_by_fingerprint params[:user][:fingerprint]
-    #post.legit = false if user.posts.first
-    post.user = user
-    vote = user.votes.create(positive: true)
-    post.votes << vote
+    if params[:post][:candidate].empty?
+      render json: { success: false }
+    else
+      post = Post.new params[:post]
+      user = User.find_or_create_by_fingerprint params[:user][:fingerprint]
+      user.email = params[:user][:email] unless params[:user][:email].empty? || user.email
+      #post.legit = false if user.posts.first
+      post.user = user
+      vote = user.votes.create(positive: true)
+      post.votes << vote
     
-    respond_to do |format|
-      if post.save
-        format.html { redirect_to post, notice: 'Post was successfully created.' }
-        format.json { render json: { success: true, post: post }, status: :created, location: post }
-      else
-        format.html { render action: "new" }
-        format.json { render json: { success: false, errors: post.errors }, status: :unprocessable_entity }
+      respond_to do |format|
+        if post.save
+          format.html { redirect_to post, notice: 'Post was successfully created.' }
+          format.json { render json: { success: true, post: post }, status: :created, location: post }
+        else
+          format.html { render action: "new" }
+          format.json { render json: { success: false, errors: post.errors }, status: :unprocessable_entity }
+        end
       end
     end
   end

@@ -13,13 +13,14 @@ HomeController = ($scope, $window, $location, $http) ->
       method: 'POST'
       url: '/posts'
       data: $.param {
-        post: { reason: @reason, candidate: @candidate, email: @email }
-        user: { fingerprint: jQuery.fingerprint() }
+        post: { reason: @reason, candidate: @candidate }
+        user: { fingerprint: jQuery.fingerprint(), email: @email }
       }
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).success (rsp, status, headers) ->
       if rsp.success
         angular.element('section#submit').fadeOut()
+        rsp.post.votes = 1
         $scope.posts.unshift rsp.post
 
   $scope.vote = (post) ->
