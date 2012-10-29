@@ -27,7 +27,7 @@
 		</div>
 		<p class="sentence">because...</p>
 		<div class="field">
-			<textarea cols="20" rows="10" class="reason" ng-model='reason' placeholder='...no more than 200 words'></textarea>
+			<textarea cols="20" rows="10" class="reason" ng-model='reason' max-length="600" placeholder="...no more than 200 words."></textarea>
 		</div>
 		<div class="field">
 			<input type="textarea" name="post[user_attributes][email]"class="email" ng-model='email' placeholder="your_email@example.com (optional)">
@@ -48,14 +48,24 @@
 			<li><a href="#"><span>Recent</span></a></li>
 		</ul>
 	</div>
-	<div class="submission" ng-repeat='post in posts' id='post{{post.id}}'>
-		<div vote ng-click='vote(post)' class="upvote">
-			<img src="images/vote.png" alt="Vote this up!" />
-			<span ng-bind='post.votes' class="votes"></span>
-		</div>
-		<article class="WV_TEST obama">
-			<p ng-bind='post.reason'></p>
-		</article>
+	<div ng-repeat='post in posts'>
+		<div class="submission" id='post{{post.id}}'>
+			<div vote ng-click='vote(post)' class="upvote">
+				<img src="images/vote.png" alt="Vote this up!" />
+				<span ng-bind='post.votes' class="votes"></span>
+			</div>
+			<article class="{{post.candidate}}">
+				<p>I'm voting for
+				<span ng-switch on="post.candidate">
+					<span class="pres" ng-switch-when="obama">Barack Obama</span>
+					<span class="pres" ng-switch-when="romney">Mitt Romney</span>
+					<span class="pres" ng-switch-when="johnson">Gary Johnson</span>
+					<span class="pres" ng-switch-when="nobody">nobody</span>
+				</span>
+				because <span ng-bind='post.reason'></span></p>
+			</article>
+		</div>	
+		<hr />
 	</div>
 </section>
 

@@ -111,20 +111,32 @@
         font-size: 12px; } }
 
 .submission {
-  -webkit-box-sizing: border-box;
   -moz-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
-  margin: 0 auto 20px;
-  outline: 2px dashed #0b58bb;
+  margin: 20px auto;
+  min-height: 70px;
   padding: 10px;
   position: relative;
-  text-align: left; }
+  text-align: left;
+  word-wrap: break-word; }
   .submission article {
     font-size: 24px;
-    margin-left: 72px; }
+    margin-left: 72px;
+    color: #000; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  background-image: -moz-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  background-image: -ms-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  background-image: -o-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  width: 100px; }
 
 .upvote {
   float: left;
@@ -159,5 +171,21 @@
   text-align: center;
   top: 17px;
   width: 46px; }
+
+.obama .pres {
+  color: #0b58bb;
+  font-size: 20px; }
+
+.romney .pres {
+  color: #ff0000;
+  font-size: 20px; }
+
+.johnson .pres {
+  color: #ce980e;
+  font-size: 20px; }
+
+.nobody .pres {
+  color: #928f87;
+  font-size: 20px; }
 
 /* @end */
