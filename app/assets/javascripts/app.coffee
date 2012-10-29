@@ -21,6 +21,13 @@ HomeController = ($scope, $window, $location, $http) ->
       console.log rsp
 
 angular.module('why-vote', ['ngCookies'])
+  .directive('vote', -> (scope, element, attrs) ->
+    votes = element.find '.votes'
+    orig  = votes.html()
+    element.on
+      mouseenter: -> votes.html '<--'
+      mouseleave: -> votes.html orig
+  )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',
       templateUrl: '/partials/home.html'
@@ -28,3 +35,4 @@ angular.module('why-vote', ['ngCookies'])
     ).otherwise redirectTo: '/'
     $locationProvider.html5Mode true
   ])
+
