@@ -8,11 +8,17 @@
   height: 40px; }
 
 .candidate {
-  -webkit-transition: all 1s linear;
+  -webkit-transition: all .1s linear;
   display: inline-block;
   width: 200px;
-  margin: 0 4px;
-  cursor: pointer; }
+  margin: 0 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 16px; }
+  .candidate:hover {
+    color: inherit; }
+  .candidate:active {
+    color: inherit; }
   .candidate img {
     border: 2px solid #000;
     border-radius: 100px;

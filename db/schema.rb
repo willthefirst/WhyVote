@@ -28,8 +28,6 @@ ActiveRecord::Schema.define(:version => 20121028202935) do
     t.string   "name"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "email"
-    t.integer  "post_id"
     t.string   "fingerprint"
   end
 

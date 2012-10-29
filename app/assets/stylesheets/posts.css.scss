@@ -15,11 +15,21 @@
 	}
 
 	.candidate {
-		-webkit-transition: all 1s linear;
+		-webkit-transition: all .1s linear;
 		display: inline-block;
 		width: 200px;
-		margin: 0 4px;
+		margin: 0 12px;
 		cursor: pointer;
+		color: #fff;
+		line-height: 16px;
+
+		&:hover {
+			color: inherit;
+		}
+
+		&:active {
+			color: inherit;
+		}
 
 		img {
 			border: 2px solid #000;
