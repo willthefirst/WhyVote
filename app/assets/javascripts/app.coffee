@@ -13,7 +13,7 @@ HomeController = ($scope, $window, $location, $http) ->
       method: 'POST'
       url: '/posts'
       data: $.param {
-        post: { reason: @reason, candidate: @candidate }
+        post: { reason: @reason, candidate: @candidate, email: @email }
         user: { fingerprint: jQuery.fingerprint() }
       }
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
