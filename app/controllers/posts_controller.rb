@@ -2,11 +2,32 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    posts = Post.all
+    posts.each do |post|
+      user = User.find_or_create_by_fingerprint params[:fingerprint]
+      unless post.votes.where(user_id: user.id).first
+        vote = user.votes.create(positive: false)
+        post.votes << vote
+      end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.json { render json: posts.sort_by{ |p| [p.popularity, p.created_at] }.to_json(include: :votes) }
+    end
+  end
+
+  def vote
+    post = Post.find params[:post][:id]
+    user = User.find_or_create_by_fingerprint params[:fingerprint]
+    prev_vote = post.votes.where(user_id: user.id).first
+    unless prev_vote && prev_vote.positive
+      prev_vote.destroy if prev_vote
+      vote = current_user.votes.create(positive: true)
+      post.votes << vote
+      render json: { success: true }
+    else
+      render json: { success: false }
     end
   end
 
@@ -43,17 +64,18 @@ class PostsController < ApplicationController
 
     post = Post.new params[:post]
     user = User.find_or_create_by_fingerprint params[:user][:fingerprint]
-    post.legit = false if user.posts.first
+    #post.legit = false if user.posts.first
     post.user = user
-    user.save
+    vote = user.votes.create(positive: true)
+    post.votes << vote
     
     respond_to do |format|
       if post.save
         format.html { redirect_to post, notice: 'Post was successfully created.' }
-        format.json { render json: post, status: :created, location: post }
+        format.json { render json: { success: true, post: post }, status: :created, location: post }
       else
         format.html { render action: "new" }
-        format.json { render json: post.errors, status: :unprocessable_entity }
+        format.json { render json: { success: false, errors: post.errors }, status: :unprocessable_entity }
       end
     end
   end

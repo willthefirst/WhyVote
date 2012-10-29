@@ -18,15 +18,31 @@ HomeController = ($scope, $window, $location, $http) ->
       }
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).success (rsp, status, headers) ->
-      console.log rsp
+      if rsp.success
+        angular.element('section#submit').fadeOut()
+        $scope.posts.unshift rsp.post
+
+  $scope.vote = (post) ->
+    $http.post('/vote', { post: post, fingerprint: jQuery.fingerprint() }).success (rsp) ->
+      if rsp.success
+        votes = angular.element('#post' + post.id).find('.votes')
+        num = parseInt(votes.attr('orig')) + 1
+        votes.html num
+
+  $http.get('/posts.json?fingerprint=' + jQuery.fingerprint()).success (rsp) ->
+    _.each rsp, (post) -> post.votes = _.filter(post.votes, (vote) -> vote.positive).length
+    $scope.posts = rsp
 
 angular.module('why-vote', ['ngCookies'])
   .directive('vote', -> (scope, element, attrs) ->
     votes = element.find '.votes'
-    orig  = votes.html()
     element.on
-      mouseenter: -> votes.html '<--'
-      mouseleave: -> votes.html orig
+      mouseenter: ->
+        votes.attr('orig', votes.html())
+        votes.html '<--'
+
+      mouseleave: ->
+        votes.html votes.attr('orig') if votes.html() == '&lt;--'
   )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',

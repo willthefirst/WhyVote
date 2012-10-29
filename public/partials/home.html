@@ -1,4 +1,4 @@
-<section id="submit" style="display:none">
+<section id="submit">
 	<form class="new_post" id="new_post" ng-submit='submit()'>
 		<p class="sentence">I'm voting for</p>
 		<div class="field">
@@ -27,7 +27,7 @@
 		</div>
 		<p class="sentence">because...</p>
 		<div class="field">
-			<textarea cols="20" rows="10" class="reason">...no more than 200 words.</textarea>
+			<textarea cols="20" rows="10" class="reason" ng-model='reason' placeholder='...no more than 200 words'></textarea>
 		</div>
 		<div class="field">
 			<input type="textarea" name="post[user_attributes][email]"class="email" ng-model='email' placeholder="your_email@example.com">
@@ -48,60 +48,13 @@
 			<li><a href="#"><span>Recent</span></a></li>
 		</ul>
 	</div>
-	<div class="submission">
-		<div vote class="upvote">
-			<a href="VOTE_TEST">
-				<img src="images/vote.png" alt="Vote this up!" />
-				<span class="votes">895</span>
-			</a>
+	<div class="submission" ng-repeat='post in posts' id='post{{post.id}}'>
+		<div vote ng-click='vote(post)' class="upvote">
+			<img src="images/vote.png" alt="Vote this up!" />
+			<span ng-bind='post.votes' class="votes"></span>
 		</div>
 		<article class="WV_TEST obama">
-			<p>
-				I'm voting for <span class="pres">Barack Obama</span> because <span> lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</span>
-		 	</p>
-		</article>
-	</div>
-	<div class="submission">
-		<div vote class="upvote">
-			<a href="VOTE_TEST">
-				<img src="images/vote.png" alt="Vote this up!" />
-				<span class="votes">23</span>
-			</a>
-		</div>
-		<article class="WV_TEST johnson">
-			<p>
-				I'm voting for <span class="pres">Gary Johnson</span> because <span> lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</span>
-		 	</p>
-		</article>
-	</div>
-	<div class="submission">
-		<div vote class="upvote">
-			<a href="VOTE_TEST">
-				<img src="images/vote.png" alt="Vote this up!" />
-				<span class="votes">2</span>
-			</a>
-		</div>
-		<article class="WV_TEST romney">
-			<p>
-				I'm voting for <span class="pres">Mitt Romney</span> because <span> lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</span>
-		 	</p>
-		</article>
-	</div>
-	<div class="submission">
-		<div vote class="upvote">
-			<a href="VOTE_TEST">
-				<img src="images/vote.png" alt="Vote this up!" />
-				<span class="votes">9123</span>
-			</a>
-		</div>
-		<article class="WV_TEST nobody">
-			<p>
-				I'm voting for <span class="pres">nobody</span> because <span> lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</span>
-		 	</p>
+			<p ng-bind='post.reason'></p>
 		</article>
 	</div>
 </section>
