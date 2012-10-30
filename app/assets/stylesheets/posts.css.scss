@@ -74,13 +74,21 @@
 		-moz-sizing: border-box;
 		-ms-box-sizing: border-box;
 		-o-box-sizing: border-box;
-		box-sizing: border-box;	}
+		box-sizing: border-box;
+		@media screen and (max-width:500px) {
+			font-size: 18px;
+			line-height: 20px;
+		}
+	}
 
 	.email {
 		height: 40px;
 		min-width: 350px;
 		text-align: center;
 		width: 80%;
+		@media screen and (max-width:500px) {
+			font-size: 18px;
+		}
 	}
 
 	.submit {

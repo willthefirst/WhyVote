@@ -20,6 +20,7 @@ HomeController = ($scope, $window, $location, $http) ->
     }).success (rsp, status, headers) ->
       if rsp.success
         angular.element('section#submit').fadeOut()
+        angular.element('section#posts').fadeIn()
         rsp.post.votes = 1
         $scope.posts.unshift rsp.post
 
