@@ -45,6 +45,11 @@ angular.module('why-vote', ['ngCookies'])
 
       mouseleave: ->
         votes.html votes.attr('orig') if votes.html() == '&lt;--'
+
+      mousedown: ->
+        votes.html '<--'
+        votes.parent().toggleClass "voted novote"
+        element.off()
   )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',
