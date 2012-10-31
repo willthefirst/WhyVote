@@ -79,6 +79,9 @@
 			font-size: 18px;
 			line-height: 20px;
 		}
+		&:first-letter {
+			text-transform: lowercase;
+		}
 	}
 
 	.email {
@@ -120,6 +123,10 @@
 		margin: auto;
 		padding: 20px;
 		margin-bottom: 20px;
+	}
+
+	.sort-row {
+		display: inline-block;
 	}
 
 	.sort li {

@@ -154,6 +154,12 @@
  		margin: auto;
  	}
 
+ 	@media screen and (max-width:450px) {
+		#global-wrapper {
+			width: 98%;
+		}
+	}
+
  /* @end */
 
 
