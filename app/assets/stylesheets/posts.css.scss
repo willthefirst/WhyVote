@@ -83,11 +83,12 @@
 
 	.email {
 		height: 40px;
-		min-width: 350px;
 		text-align: center;
 		width: 80%;
-		@media screen and (max-width:500px) {
+		@media screen and (max-width:650px) {
 			font-size: 18px;
+			width: 100%;
+
 		}
 	}
 
