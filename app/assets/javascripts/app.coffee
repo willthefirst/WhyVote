@@ -21,8 +21,11 @@ HomeController = ($scope, $window, $location, $http) ->
       if rsp.success
         angular.element('section#submit').fadeOut()
         angular.element('section#posts').fadeIn()
+        $('body').scrollTop(0);
+
         rsp.post.votes = 1
         $scope.posts.unshift rsp.post
+
 
   $scope.vote = (post) ->
     $http.post('/vote', { post: post, fingerprint: jQuery.fingerprint() }).success (rsp) ->
@@ -45,6 +48,11 @@ angular.module('why-vote', ['ngCookies'])
 
       mouseleave: ->
         votes.html votes.attr('orig') if votes.html() == '&lt;--'
+
+      mousedown: ->
+        votes.html '<--'
+        votes.parent().toggleClass "voted novote"
+        element.off()
   )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',

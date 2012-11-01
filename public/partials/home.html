@@ -1,6 +1,6 @@
 <section id="submit">
 	<form class="new_post" id="new_post" ng-submit='submit()'>
-		<p class="sentence">I'm voting for</p>
+		<p class="sentence">I'm voting for...</p>
 		<div class="field">
 			<ul>
 				<div class="candidate-row">
@@ -27,7 +27,7 @@
 		</div>
 		<p class="sentence">because...</p>
 		<div class="field">
-			<textarea cols="20" rows="10" class="reason" ng-model='reason' max-length="600" placeholder="...no more than 200 words."></textarea>
+			<textarea cols="20" rows="10" class="reason" ng-model='reason' max-length="600" placeholder="No more than 200 words. Then again, no one's counting."></textarea>
 		</div>
 		<div class="field">
 			<input type="textarea" name="post[user_attributes][email]"class="email" ng-model='email' placeholder="your_email@example.com (optional)">
@@ -38,19 +38,27 @@
 	</form>
 </section>
 <section id="posts" style="display:none">
+	<a name="posts"></a>
 	<div class="disclaimer">
-		<p>Thanks for that. Now, vote for the best answers from other people <br />(by clicking the button on the left of good posts)!</p>
+		<p>Thanks for that. Now, vote for the best answers from other people by clicking those buttons on the left.</p>
+		<p class='fb red'>Oh, and like this on fucking Facebook.</p>
+		<div class="fb-like" data-href="http://defendyourfuckingvote.herokuapp.com" data-send="false" data-width="250" data-show-faces="false"></div>
 	</div>
 	<div class="sort">
 		<ul>
-			<li><a href="#"><span>Best</span></a></li>
-			<li><a href="#"><span>Candidate</span></a></li>
-			<li><a href="#"><span>Recent</span></a></li>
+			<div class="sort-row">
+				<li><a href="#"><span>Best</span></a></li>
+				<li><a href="#"><span>Candidate</span></a></li>
+			</div>
+			<div class="sort-row">
+				<li><a href="#"><span>Recent</span></a></li>
+				<li><a href="#"><span>Length</span></a></li>
+			</div>
 		</ul>
 	</div>
 	<div ng-repeat='post in posts'>
 		<div class="submission" id='post{{post.id}}'>
-			<div vote ng-click='vote(post)' class="upvote">
+			<div vote ng-click='vote(post)' class="upvote novote">
 				<img src="images/vote.png" alt="Vote this up!" />
 				<span ng-bind='post.votes' class="votes"></span>
 			</div>

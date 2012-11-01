@@ -37,6 +37,10 @@
 
 		img {
 			border: 2px solid #000;
+			-moz-border-radius: 95px;
+			-webkit-border-radius: 95px;
+			-o-border-radius: 95px;
+			-ms-border-radius: 95px;
 			border-radius: 95px;
 			width: 100%;
 			&:hover {
@@ -79,15 +83,19 @@
 			font-size: 18px;
 			line-height: 20px;
 		}
+		&:first-letter {
+			text-transform: lowercase;
+		}
 	}
 
 	.email {
 		height: 40px;
-		min-width: 350px;
 		text-align: center;
 		width: 80%;
-		@media screen and (max-width:500px) {
+		@media screen and (max-width:650px) {
 			font-size: 18px;
+			width: 100%;
+
 		}
 	}
 
@@ -98,6 +106,10 @@
 		padding: 10px;
 		height: 150px;
 		min-width: 150px;
+		-moz-border-radius: 75px;
+		-webkit-border-radius: 75px;
+		-o-border-radius: 75px;
+		-ms-border-radius: 75px;
 		border-radius: 75px;
 		cursor: pointer;
 		color: #fff;
@@ -121,6 +133,14 @@
 		margin-bottom: 20px;
 	}
 
+	.fb {
+		margin-top: 4px;
+	}
+
+	.sort-row {
+		display: inline-block;
+	}
+
 	.sort li {
 		display: inline-block;
 		font-size: 14px;
@@ -129,6 +149,10 @@
 		margin-bottom: 10px;
 
 		a {
+			-moz-border-radius: 50px;
+			-webkit-border-radius: 50px;
+			-o-border-radius: 50px;
+			-ms-border-radius: 50px;
 			border-radius: 50px;
 			border: 2px solid #0b58bb;
 			width: 100px;
@@ -194,22 +218,35 @@
 		-o-transition: all .2s linear;
 		-ms-transition: all .2s linear;
 		transition: all .2s linear;
+		-moz-border-radius: 25px;
+		-webkit-border-radius: 25px;
+		-o-border-radius: 25px;
+		-ms-border-radius: 25px;
 		border-radius: 25px;
 		border: 1px solid #0b58bb;
 		display: block;
 		height: 50px;
 		text-decoration: none;
+	}
 
-		&:hover {
-			background-color: inherit;
-			font-weight: bold;
-			-webkit-transform: rotate(90deg);
-			-moz-transform: rotate(90deg);
-			-o-transform: rotate(90deg);
-			-ms-transform: rotate(90deg);
-			transform: rotate(90deg);
-		}
-		
+	.novote:hover {
+		background-color: inherit;
+		font-weight: bold;
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+
+	.voted {
+		background-color: inherit;
+		font-weight: bold;
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
 	}
 
 	.votes {
