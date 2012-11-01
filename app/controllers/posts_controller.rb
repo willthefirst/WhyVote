@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     prev_vote = post.votes.where(user_id: user.id).first
     unless prev_vote && prev_vote.positive
       prev_vote.destroy if prev_vote
-      vote = current_user.votes.create(positive: true)
+      vote = user.votes.create(positive: true)
       post.votes << vote
       render json: { success: true }
     else
