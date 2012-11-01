@@ -33,7 +33,6 @@ HomeController = ($scope, $window, $location, $http) ->
         votes = angular.element('#post' + post.id).find('.votes')
         num = parseInt(votes.attr('orig')) + 1
         votes.html num
-    ''
 
   $http.get('/posts.json?fingerprint=' + jQuery.fingerprint()).success (rsp) ->
     _.each rsp, (post) -> post.votes = _.filter(post.votes, (vote) -> vote.positive).length
@@ -51,9 +50,7 @@ angular.module('why-vote', ['ngCookies'])
         votes.html votes.attr('orig') if votes.html() == '&lt;--'
 
       mousedown: ->
-        votes.html '<--'
         votes.parent().toggleClass "voted novote"
-        element.off()
   )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',

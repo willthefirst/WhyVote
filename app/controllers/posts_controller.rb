@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: posts.sort_by{ |p| [p.popularity, p.created_at] }.to_json(include: :votes) }
+      format.json { render json: posts.sort_by{ |p| [-p.popularity, p.created_at] }.to_json(include: :votes) }
     end
   end
 
