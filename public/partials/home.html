@@ -59,8 +59,8 @@
 	<div ng-repeat='post in posts'>
 		<div class="submission" id='post{{post.id}}'>
 			<div vote ng-click='vote(post)' class="upvote novote">
-				<img src="images/vote.png" alt="Vote this up!" />
-				<span ng-bind='post.votes' class="votes"></span>
+				<img ng-click="vote(post)" src="images/vote.png" alt="Vote this up!" />
+				<span ng-click='vote(post)' ng-bind='post.votes' class="votes"></span>
 			</div>
 			<article class="{{post.candidate}}">
 				<p>I'm voting for fucking
