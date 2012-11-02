@@ -2,6 +2,7 @@ Array::merge = (other) -> Array::push.apply @, other
 
 HomeController = ($scope, $window, $location, $http) ->
   $scope.select_submit = ->
+    window.scrollTo(0,0)
     angular.element('#posts').hide()
     angular.element('#submit').fadeIn()
 
@@ -30,7 +31,7 @@ HomeController = ($scope, $window, $location, $http) ->
         angular.element('.call-to-action, .fixed-button').hide()
         angular.element('.disclaimer').show()
         angular.element('section#posts').fadeIn()
-        $('body').scrollTop(0);
+        window.scrollTo(0,0)
 
         rsp.post.votes = 1
         $scope.posts.unshift rsp.post
