@@ -55,13 +55,15 @@ HomeController = ($scope, $window, $location, $http) ->
 angular.module('why-vote', ['ngCookies'])
   .directive('vote', -> (scope, element, attrs) ->
     votes = element.find '.votes'
-    element.on
-      mouseenter: ->
-        votes.attr('orig', votes.html())
-        votes.html '<--'
 
-      mouseleave: ->
-        votes.html votes.attr('orig') if votes.html() == '&lt;--'
+    if !Modernizr.touch
+      element.on
+        mouseenter: ->
+          votes.attr('orig', votes.html())
+          votes.html '<--'
+
+        mouseleave: ->
+          votes.html votes.attr('orig') if votes.html() == '&lt;--'
   )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',
