@@ -48,7 +48,7 @@ HomeController = ($scope, $window, $location, $http) ->
   $http.get('/posts.json?fingerprint=' + jQuery.fingerprint()).success (rsp) ->
     _.each rsp, (post) ->
       post.votes = _.filter(post.votes, (vote) -> vote.positive).length
-      post.reason = post.reason[0].toLowerCase() + post.reason.slice(1, post.reason.length - 1) unless post.reason[0] == 'I' || post.reason.slice(0,6) == 'Barack' || post.reason.slice(0, 5) == 'Obama' || post.reason.slice(0, 4) == 'Mitt' || post.reason.slice(0, 6) == 'Romney' || post.reason.slice(0, 4) == 'Gary' || post.reason.slice(0, 7) == 'Johnson'
+      post.reason = post.reason[0].toLowerCase() + post.reason.slice(1, post.reason.length) unless post.reason[0] == 'I' || post.reason.slice(0,6) == 'Barack' || post.reason.slice(0, 5) == 'Obama' || post.reason.slice(0, 4) == 'Mitt' || post.reason.slice(0, 6) == 'Romney' || post.reason.slice(0, 4) == 'Gary' || post.reason.slice(0, 7) == 'Johnson'
     $scope.posts = rsp
 
 angular.module('why-vote', ['ngCookies'])
