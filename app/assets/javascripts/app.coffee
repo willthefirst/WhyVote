@@ -55,7 +55,6 @@ angular.module('why-vote', ['ngCookies'])
 
     if $("html").hasClass("no-touch") 
       $(".hoverable").addClass "hover"
-  
 
     if !Modernizr.touch
       element.on
@@ -65,6 +64,10 @@ angular.module('why-vote', ['ngCookies'])
 
         mouseleave: ->
           votes.html votes.attr('orig') if votes.html() == '&lt;--'
+    else
+      element.on
+        touchstart: ->
+          votes.attr('orig', votes.html())
   )
   .config([ '$routeProvider', '$locationProvider', '$httpProvider', ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider.when('/',
