@@ -291,6 +291,14 @@
 		-o-transform: rotate(90deg);
 		-ms-transform: rotate(90deg);
 		transform: rotate(90deg);
+
+		@media screen and (max-width:500px) {
+			-webkit-transform: rotate(0);
+			-moz-transform: rotate(0);
+			-o-transform: rotate(0);
+			-ms-transform: rotate(0);
+			transform: rotate(0);
+		}
 	}
 
 	.votes {
