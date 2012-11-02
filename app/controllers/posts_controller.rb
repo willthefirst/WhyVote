@@ -8,6 +8,7 @@ class PostsController < ApplicationController
       unless post.votes.where(user_id: user.id).first
         vote = user.votes.create(positive: false)
         post.votes << vote
+        post.save
       end
     end
 
