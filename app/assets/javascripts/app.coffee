@@ -2,9 +2,6 @@ Array::merge = (other) -> Array::push.apply @, other
 
 HomeController = ($scope, $window, $location, $http) ->
 
-  if $("html").hasClass("no-touch") 
-    $(".hoverable").addClass "hover"
-
   $scope.select_submit = ->
     window.scrollTo(0,0)
     angular.element('#posts').hide()
@@ -55,6 +52,10 @@ HomeController = ($scope, $window, $location, $http) ->
 angular.module('why-vote', ['ngCookies'])
   .directive('vote', -> (scope, element, attrs) ->
     votes = element.find '.votes'
+
+    if $("html").hasClass("no-touch") 
+      $(".hoverable").addClass "hover"
+  
 
     if !Modernizr.touch
       element.on
