@@ -20,6 +20,10 @@ HomeController = ($scope, $window, $location, $http) ->
   $scope.select_close = ->
     angular.element('.disclaimer').fadeOut()
 
+  $scope.back = ->
+    angular.element('#submit').fadeOut()
+    angular.element('#posts').show()
+
   $scope.submit = ->
     $http({
       method: 'POST'

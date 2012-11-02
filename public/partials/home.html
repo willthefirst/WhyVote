@@ -35,13 +35,16 @@
 		<div class="actions">
 			<button name="commit" type="submit" class="submit">Submit</button>
 		</div>
+		<span class="back" ng-click='back()'>FUCK THIS,<br /> GO BACK</span>
 	</form>
 </section>
 <section id="posts">
 	<a name="posts"></a>
-	<button class="fixed-button" ng-click='select_submit()'>Submit</button>
+	<div class="fixed">
+		<button class="fixed-button" ng-click='select_submit()'>Submit</button>
+	</div>
 	<div class="call-to-action">
-		<p>Our users said who they're voting for, and why.</p>
+		<p>Americans are getting vocal.</p>
 		<p class="red"><a ng-click='select_submit()'>So should you.</a></p>
 	</div>
 	<div class="disclaimer" style="display:none">

@@ -1,0 +1,294 @@
+/* @group homepage */
+.call-to-action {
+  margin-bottom: 16px; }
+  .call-to-action a {
+    color: inherit; }
+  .call-to-action a:hover {
+    background-color: #fff;
+    color: #0bccbb; }
+
+.fixed-button {
+  background-color: #0b58bb;
+  border-color: #ff0000;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border: 2px solid #000;
+  border-bottom: 0;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'american_purposeregular';
+  font-size: 30px;
+  height: 50px;
+  left: 50%;
+  margin-left: -200px;
+  padding: 10px;
+  position: fixed;
+  width: 400px;
+  z-index: 1; }
+  @media screen and (max-width:400px) {
+    .fixed-button {
+      border-radius: 0;
+      width: 100%;
+      border-bottom: 0;
+      margin-left: 0;
+      left: 0; } }
+
+.fixed {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  box-shadow: 0px -10px 10px white;
+  z-index: 1; }
+
+.close {
+  color: #000;
+  cursor: pointer;
+  font-family: sans-serif;
+  position: absolute;
+  margin: 5px;
+  line-height: 10px;
+  right: 0;
+  top: 0; }
+
+.sentence {
+  font-size: 40px;
+  line-height: 52px;
+  margin-bottom: 20px; }
+
+.post_user_attributes_email {
+  height: 40px; }
+
+.new_post {
+  position: relative; }
+
+.candidate {
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  -ms-transition: all .1s linear;
+  transition: all .1s linear;
+  display: inline-block;
+  width: 190px;
+  margin: 0 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 16px; }
+  .candidate:hover {
+    color: inherit; }
+  .candidate:active {
+    color: inherit; }
+  .candidate img {
+    border: 2px solid #000;
+    -moz-border-radius: 95px;
+    -webkit-border-radius: 95px;
+    -o-border-radius: 95px;
+    -ms-border-radius: 95px;
+    border-radius: 95px;
+    width: 100%; }
+    .candidate img:hover {
+      border: 2px solid #ff0000; }
+
+.candidate-row {
+  display: inline-block; }
+
+.back {
+  position: absolute;
+  display: block;
+  bottom: 30px;
+  right: 0;
+  color: #000;
+  font-size: 12px;
+  line-height: 12px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.reason, .email {
+  -webkit-box-sizing: border-box;
+  -moz-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px dashed #0b58bb;
+  color: #000;
+  font-size: 26px;
+  line-height: 34px;
+  font-family: Georgia, serif;
+  width: 100%; }
+  .reason:focus, .email:focus {
+    outline: none; }
+
+.reason {
+  margin-bottom: 20px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media screen and (max-width:500px) {
+    .reason {
+      font-size: 18px;
+      line-height: 20px; } }
+  .reason:first-letter {
+    text-transform: lowercase; }
+
+.email {
+  height: 40px;
+  text-align: center;
+  width: 80%; }
+  @media screen and (max-width:650px) {
+    .email {
+      font-size: 18px;
+      width: 100%; } }
+
+.submit {
+  border: 2px solid #000;
+  font-family: 'american_purposeregular';
+  font-size: 30px;
+  padding: 10px;
+  height: 150px;
+  min-width: 150px;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -o-border-radius: 75px;
+  -ms-border-radius: 75px;
+  border-radius: 75px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #0b58bb;
+  margin-top: 15px; }
+  .submit:hover {
+    border: 5px solid #ff0000; }
+
+/* @end */
+/* @group results page */
+.disclaimer {
+  outline: 2px dashed #0b58bb;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative; }
+
+.fb {
+  margin: 10px 6px; }
+
+.sort-row {
+  display: inline-block; }
+
+.sort li {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
+  .sort li a {
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    border: 2px solid #0b58bb;
+    width: 100px;
+    padding: 6px;
+    color: inherit;
+    display: block;
+    margin-left: 12px;
+    text-decoration: none; }
+    .sort li a:hover {
+      background-color: #0b58bb;
+      color: white; }
+    @media screen and (max-width:500px) {
+      .sort li a {
+        width: 80px;
+        font-size: 12px; } }
+
+.submission {
+  -moz-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  margin: 20px auto;
+  min-height: 70px;
+  padding: 10px;
+  position: relative;
+  text-align: left;
+  word-wrap: break-word; }
+  .submission article {
+    font-size: 24px;
+    margin-left: 72px;
+    color: #000; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  background-image: -moz-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  background-image: -ms-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  background-image: -o-linear-gradient(left, #cccccc, #0b58bb, #cccccc);
+  width: 100px; }
+
+.upvote {
+  float: left;
+  margin: 0 8px;
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  transition: all .2s linear;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  border: 1px solid #0b58bb;
+  display: block;
+  height: 50px;
+  text-decoration: none; }
+  .upvote.hover:hover {
+    background-color: inherit;
+    font-weight: bold;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+
+.votes {
+  left: 3px;
+  position: absolute;
+  text-align: center;
+  top: 17px;
+  width: 46px; }
+
+.obama .pres {
+  color: #0b58bb;
+  font-size: 20px; }
+
+.romney .pres {
+  color: #ff0000;
+  font-size: 20px; }
+
+.johnson .pres {
+  color: #ce980e;
+  font-size: 20px; }
+
+.nobody .pres {
+  color: #928f87;
+  font-size: 20px; }
+
+/* @end */

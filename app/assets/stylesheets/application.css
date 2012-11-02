@@ -151,7 +151,7 @@
  		width: 90%;
  		max-width: 900px;
  		padding-top: 10px;
- 		margin: auto;
+ 		margin: 0 auto 50px;
  	}
 
  	@media screen and (max-width:450px) {
