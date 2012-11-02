@@ -39,12 +39,13 @@
 </section>
 <section id="posts">
 	<a name="posts"></a>
+	<button class="fixed-button" ng-click='select_submit()'>Submit</button>
 	<div class="call-to-action">
-		<button class="submit" ng-click='select_submit()'>Submit</button>
-		<p>Do you have a convincing argument for who to vote for in this election?</p>
-		<p class="red">The people below sure do.</p>
+		<p>Our users said who they're voting for, and why.</p>
+		<p class="red"><a ng-click='select_submit()'>So should you.</a></p>
 	</div>
 	<div class="disclaimer" style="display:none">
+		<span class="close" ng-click='select_close()'>x</span>
 		<p>Thanks for that. Now, vote for the best answers from other people by clicking those buttons on the left.</p>
 		<p class='fb red'>Oh, and like this on fucking Facebook.</p>
 		<div class="fb-like" data-href="http://defendyourfuckingvote.herokuapp.com" data-send="false" data-width="250" data-show-faces="false"></div>

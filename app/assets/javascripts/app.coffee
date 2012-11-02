@@ -12,6 +12,9 @@ HomeController = ($scope, $window, $location, $http) ->
     angular.element('.candidate').hide()
     angular.element('.selected').show()
 
+  $scope.select_close = ->
+    angular.element('.disclaimer').fadeOut()
+
   $scope.submit = ->
     $http({
       method: 'POST'
@@ -24,7 +27,7 @@ HomeController = ($scope, $window, $location, $http) ->
     }).success (rsp, status, headers) ->
       if rsp.success
         angular.element('section#submit').hide()
-        angular.element('.call-to-action').hide()
+        angular.element('.call-to-action, .fixed-button').hide()
         angular.element('.disclaimer').show()
         angular.element('section#posts').fadeIn()
         $('body').scrollTop(0);

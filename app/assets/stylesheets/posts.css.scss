@@ -7,9 +7,47 @@
 	.call-to-action {
 		margin-bottom: 16px;
 
-		button {
-			margin-bottom: 12px;
+		a {
+			color: inherit;
 		}
+
+		a:hover {
+			background-color: #fff;
+			color: #0bccbb;
+		}
+	}
+
+	.fixed-button {
+		background-color: #0b58bb;
+		border-bottom: 0;
+		border-color: #ff0000;
+		border-top-left-radius: 80px;
+		border-top-right-radius: 80px;
+		border: 2px solid #000;
+		bottom: 0;
+		color: #fff;
+		cursor: pointer;
+		font-family:'american_purposeregular';
+		font-size: 30px;
+		height: 80px;
+		left: 50%;
+		margin-left: -200px;
+		max-width: 400px;
+		padding: 10px;
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.close {
+		color: #000;
+		cursor: pointer;
+		font-family: sans-serif;
+		position: absolute;
+		margin: 5px;
+		line-height: 10px;
+		right: 0;
+		top: 0;
 	}
 
 	.sentence {
@@ -139,6 +177,7 @@
 		margin: auto;
 		padding: 20px;
 		margin-bottom: 20px;
+		position: relative;
 	}
 
 	.fb {
