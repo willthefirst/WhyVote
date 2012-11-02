@@ -1,4 +1,4 @@
-<section id="submit">
+<section id="submit" style="display:none">
 	<form class="new_post" id="new_post" ng-submit='submit()'>
 		<p class="sentence">I'm voting for...</p>
 		<div class="field">
@@ -37,9 +37,14 @@
 		</div>
 	</form>
 </section>
-<section id="posts" style="display:none">
+<section id="posts">
 	<a name="posts"></a>
-	<div class="disclaimer">
+	<div class="call-to-action">
+		<button class="submit" ng-click='select_submit()'>Submit</button>
+		<p>Do you have a convincing argument for who to vote for in this election?</p>
+		<p class="red">The people below sure do.</p>
+	</div>
+	<div class="disclaimer" style="display:none">
 		<p>Thanks for that. Now, vote for the best answers from other people by clicking those buttons on the left.</p>
 		<p class='fb red'>Oh, and like this on fucking Facebook.</p>
 		<div class="fb-like" data-href="http://defendyourfuckingvote.herokuapp.com" data-send="false" data-width="250" data-show-faces="false"></div>

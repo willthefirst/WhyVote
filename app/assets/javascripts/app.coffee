@@ -1,6 +1,10 @@
 Array::merge = (other) -> Array::push.apply @, other
 
 HomeController = ($scope, $window, $location, $http) ->
+  $scope.select_submit = ->
+    angular.element('#posts').hide()
+    angular.element('#submit').fadeIn()
+
   $scope.select_candidate = (candidate) ->
     $scope.candidate = candidate
     angular.element('.candidate').removeClass('selected')
@@ -19,7 +23,9 @@ HomeController = ($scope, $window, $location, $http) ->
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).success (rsp, status, headers) ->
       if rsp.success
-        angular.element('section#submit').fadeOut()
+        angular.element('section#submit').hide()
+        angular.element('.call-to-action').hide()
+        angular.element('.disclaimer').show()
         angular.element('section#posts').fadeIn()
         $('body').scrollTop(0);
 

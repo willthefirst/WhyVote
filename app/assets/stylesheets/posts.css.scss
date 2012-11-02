@@ -4,6 +4,14 @@
 
 /* @group homepage */
 
+	.call-to-action {
+		margin-bottom: 16px;
+
+		button {
+			margin-bottom: 12px;
+		}
+	}
+
 	.sentence {
 		font-size: 40px;
 		line-height: 52px;
@@ -134,7 +142,7 @@
 	}
 
 	.fb {
-		margin-top: 4px;
+		margin: 10px 6px;
 	}
 
 	.sort-row {
