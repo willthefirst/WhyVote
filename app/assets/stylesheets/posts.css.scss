@@ -29,14 +29,19 @@
 		cursor: pointer;
 		font-family:'american_purposeregular';
 		font-size: 30px;
-		height: 80px;
+		height: 50px;
 		left: 50%;
 		margin-left: -200px;
-		max-width: 400px;
 		padding: 10px;
 		position: fixed;
-		width: 100%;
+		width: 400px;
 		z-index: 1;
+
+		@media screen and (max-width:400px) {
+			border-radius: 0;
+			width: 100%;
+			border-bottom: 0;
+		}
 	}
 
 	.close {
@@ -277,16 +282,6 @@
 	}
 
 	.novote:hover {
-		background-color: inherit;
-		font-weight: bold;
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		-ms-transform: rotate(90deg);
-		transform: rotate(90deg);
-	}
-
-	.voted {
 		background-color: inherit;
 		font-weight: bold;
 		-webkit-transform: rotate(90deg);
