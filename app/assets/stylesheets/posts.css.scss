@@ -281,16 +281,17 @@
 		display: block;
 		height: 50px;
 		text-decoration: none;
-	}
 
-	.novote:hover {
-		background-color: inherit;
-		font-weight: bold;
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		-ms-transform: rotate(90deg);
-		transform: rotate(90deg);
+		&.hover:hover {
+			background-color: inherit;
+			font-weight: bold;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+
+		}
 	}
 
 	.votes {

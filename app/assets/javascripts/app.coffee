@@ -1,6 +1,10 @@
 Array::merge = (other) -> Array::push.apply @, other
 
 HomeController = ($scope, $window, $location, $http) ->
+
+  if $("html").hasClass("no-touch") 
+    $(".hoverable").addClass "hover"
+
   $scope.select_submit = ->
     window.scrollTo(0,0)
     angular.element('#posts').hide()
@@ -66,4 +70,6 @@ angular.module('why-vote', ['ngCookies'])
     ).otherwise redirectTo: '/'
     $locationProvider.html5Mode true
   ])
+
+
 
