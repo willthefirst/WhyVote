@@ -254,7 +254,7 @@
 			-o-border-radius: 50px;
 			-ms-border-radius: 50px;
 			border-radius: 50px;
-			border: 2px solid #0b58bb;
+			border: 2px solid;
 			width: 100px;
 			padding: 6px;
 			color: inherit;
@@ -262,9 +262,32 @@
 			margin-left: 12px;
 			text-decoration: none;
 
-			&:hover {
+			&.candidate-obama {
 				background-color: #0b58bb;
 				color: white;
+				border-color: #0b58bb;
+			}
+
+			&.candidate-romney {
+				background-color: #ff0000;
+				color: white;
+				border-color: #ff0000;
+			}
+
+			&.candidate-johnson {
+				background-color: #ce980e;
+				color: white;
+				border-color: #ce980e;
+			}
+
+			&.candidate-null {
+				border-color: #0b58bb;
+			}
+
+			&.active {
+				background-color: #0b58bb;
+				color: white;
+				border-color: #0b58bb;
 			}
 
 			@media screen and (max-width:500px) {

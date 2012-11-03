@@ -92,7 +92,7 @@ HomeController = ($scope, $window, $location, $http) ->
           when 'obama' then 'romney'
           when 'romney' then 'johnson'
           when 'johnson' then null
-      angular.element('#candidate').attr('class', 'hoverable ' + $scope.current_candidate)
+      angular.element('#candidate').attr('class', 'hoverable candidate-' + $scope.current_candidate)
       $scope.current_candidate
     sort_function: ->
       $scope.posts = _.filter $scope.posts, (post) -> post.candidate == $scope.current_candidate
@@ -115,7 +115,11 @@ HomeController = ($scope, $window, $location, $http) ->
           when 'twitter' then 'opinion'
           when 'opinion' then 'discourse'
           when 'discourse' then null
-      angular.element('#length').attr('class', 'hoverable ' + $scope.current_sort_length)
+      $length = $scope.current_sort_length
+      if !$length
+        angular.element('#length > span').html('length')
+      else
+        angular.element('#length > span').html($length)
       $scope.current_sort_length
 
     sort_function: ->
