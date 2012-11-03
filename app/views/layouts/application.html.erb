@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html ng-app='why-vote' ng-touch>
+<html ng-app='why-vote' ng-touch html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>Defend Your Fucking Vote</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=yes" />
+  <meta property="fb:app_id" content="378901915518634" /> 
   <meta property="og:title" content="Defend Your F***ing Vote" />
   <meta property="og:type" content="cause" />
   <meta property="og:url" content="http://defendyourfuckingvote.herokuapp.com" />
@@ -14,22 +15,22 @@
   <meta property="fb:admins" content="1064730089" />
 </head>
 <body>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=378901915518634";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<div id="global-wrapper">
 		<div class="sn">
-			<div class="fb-like" data-href="http://defendyourfuckingvote.herokuapp.com" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-font="segoe ui"></div>
+			<fb:like href="http://defendyourfuckingvote.herokuapp.com" send="false" layout="button_count" width="200" show_faces="false"></fb:like>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://defendyourfuckingvote.herokuapp.com" data-text="Guys. Defend your fucking vote. Come on." data-via="willthefirst" data-related="saiko_chriskun" data-hashtags="defendyourvote">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 		<h1>Defend your fucking<span class="big red"> vote.</span></h1>
 		<div ng-view></div>
 		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=378901915518634";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
 		<script type="text/javascript">
 
 		  var _gaq = _gaq || [];
