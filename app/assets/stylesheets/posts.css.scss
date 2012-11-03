@@ -89,11 +89,24 @@
 		-ms-transition: all .1s linear;
 		transition: all .1s linear;
 		display: inline-block;
-		width: 190px;
-		margin: 0 12px;
+		margin: 6px 6px 0;
+		padding-bottom: 30px;
 		cursor: pointer;
 		color: #fff;
 		line-height: 16px;
+		height: 195px;
+		width: 195px;
+		position: relative;
+		text-align: center;
+		font-size: 14px;
+
+		span {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			width: 100%;
+		}
 
 		&:hover {
 			color: inherit;
@@ -102,21 +115,35 @@
 		&:active {
 			color: inherit;
 		}
+	}
 
-		img {
-			border: 2px solid #000;
-			-moz-border-radius: 95px;
-			-webkit-border-radius: 95px;
-			-o-border-radius: 95px;
-			-ms-border-radius: 95px;
-			border-radius: 95px;
-			width: 100%;
-			&:hover {
-				border: 2px solid #ff0000;
-			}
+	#obama {
+		background: url(../images/obama.jpg) no-repeat 0 0;
+		&:hover {
+			background-image: url(../images/obama-h.jpg);
 		}
 	}
 
+	#romney {
+		background: url(../images/romney.jpg) no-repeat 0 0;
+		&:hover {
+			background-image: url(../images/romney-h.jpg);
+		}
+	}
+
+	#johnson {
+		background: url(../images/gary.jpg) no-repeat 0 0;
+		&:hover {
+			background-image: url(../images/gary-h.jpg);
+		}
+	}
+
+	#nobody {
+		background: url(../images/derek.jpg) no-repeat 0 0;
+		&:hover {
+			background-image: url(../images/derek-h.jpg);
+		}
+	}
 	.candidate-row {
 		display: inline-block;
 	}

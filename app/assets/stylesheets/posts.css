@@ -26,7 +26,7 @@
   position: fixed;
   width: 400px;
   z-index: 1; }
-  @media screen and (max-width:400px) {
+  @media screen and (max-width: 400px) {
     .fixed-button {
       border-radius: 0;
       width: 100%;
@@ -72,25 +72,46 @@
   -ms-transition: all .1s linear;
   transition: all .1s linear;
   display: inline-block;
-  width: 190px;
-  margin: 0 12px;
+  margin: 6px 6px 0;
+  padding-bottom: 30px;
   cursor: pointer;
   color: #fff;
-  line-height: 16px; }
+  line-height: 16px;
+  height: 195px;
+  width: 195px;
+  position: relative;
+  text-align: center;
+  font-size: 14px; }
+  .candidate span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%; }
   .candidate:hover {
     color: inherit; }
   .candidate:active {
     color: inherit; }
-  .candidate img {
-    border: 2px solid #000;
-    -moz-border-radius: 95px;
-    -webkit-border-radius: 95px;
-    -o-border-radius: 95px;
-    -ms-border-radius: 95px;
-    border-radius: 95px;
-    width: 100%; }
-    .candidate img:hover {
-      border: 2px solid #ff0000; }
+
+#obama {
+  background: url(../images/obama.jpg) no-repeat 0 0; }
+  #obama:hover {
+    background-image: url(../images/obama-h.jpg); }
+
+#romney {
+  background: url(../images/romney.jpg) no-repeat 0 0; }
+  #romney:hover {
+    background-image: url(../images/romney-h.jpg); }
+
+#johnson {
+  background: url(../images/gary.jpg) no-repeat 0 0; }
+  #johnson:hover {
+    background-image: url(../images/gary-h.jpg); }
+
+#nobody {
+  background: url(../images/derek.jpg) no-repeat 0 0; }
+  #nobody:hover {
+    background-image: url(../images/derek-h.jpg); }
 
 .candidate-row {
   display: inline-block; }
@@ -132,7 +153,7 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box; }
-  @media screen and (max-width:500px) {
+  @media screen and (max-width: 500px) {
     .reason {
       font-size: 18px;
       line-height: 20px; } }
@@ -143,7 +164,7 @@
   height: 40px;
   text-align: center;
   width: 80%; }
-  @media screen and (max-width:650px) {
+  @media screen and (max-width: 650px) {
     .email {
       font-size: 18px;
       width: 100%; } }
@@ -205,7 +226,7 @@
     .sort li a:hover {
       background-color: #0b58bb;
       color: white; }
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       .sort li a {
         width: 80px;
         font-size: 12px; } }
