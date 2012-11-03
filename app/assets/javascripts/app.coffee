@@ -62,10 +62,13 @@ HomeController = ($scope, $window, $location, $http) ->
       when 'order'
         if _.any($scope.active_sorts, (asort) -> asort.name == sort.name)
           remove()
+          angular.element(sort.selector).removeClass 'active'
         else
           $scope.active_sorts = _.reject $scope.active_sorts, (asort) -> asort.type == sort.type
           $scope.active_sorts.push sort
           $scope[sort.name].sort_function()
+          angular.element('.sort-row .hoverable').removeClass 'active'
+          angular.element(sort.selector).addClass 'active'
       when 'filter'
         remove()
         if sort.state_handler()
@@ -75,6 +78,7 @@ HomeController = ($scope, $window, $location, $http) ->
   $scope.best = {
     type: 'order'
     name: 'best'
+    selector: '#best'
     sort_function: -> $scope.posts = _.sortBy $scope.posts, (post) -> -post.popularity
   }
 
@@ -88,6 +92,8 @@ HomeController = ($scope, $window, $location, $http) ->
           when 'obama' then 'romney'
           when 'romney' then 'johnson'
           when 'johnson' then null
+      angular.element('#candidate').attr('class', 'hoverable ' + $scope.current_candidate)
+      $scope.current_candidate
     sort_function: ->
       $scope.posts = _.filter $scope.posts, (post) -> post.candidate == $scope.current_candidate
   }
@@ -95,6 +101,7 @@ HomeController = ($scope, $window, $location, $http) ->
   $scope.recent = {
     type: 'order'
     name: 'recent'
+    selector: '#recent'
     sort_function: -> $scope.posts = _.sortBy $scope.posts, (post) -> -(moment post.created_at)
   }
 
@@ -108,6 +115,8 @@ HomeController = ($scope, $window, $location, $http) ->
           when 'twitter' then 'opinion'
           when 'opinion' then 'discourse'
           when 'discourse' then null
+      angular.element('#length').attr('class', 'hoverable ' + $scope.current_sort_length)
+      $scope.current_sort_length
 
     sort_function: ->
       $scope.posts = _.filter $scope.posts, (post) ->
