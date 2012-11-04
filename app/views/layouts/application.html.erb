@@ -17,35 +17,15 @@
 <body>
 	<div id="global-wrapper">
 		<div class="sn">
-			<div id='fb-root'></div>
-			    <script src='http://connect.facebook.net/en_US/all.js'></script>
-			    <p class="facebooks"><a onclick='postToFeed(); return false;'>PUT THIS ON FACEBOOK.</a></p>
-			    <p id='msg'></p>
-
-			    <script> 
-			      FB.init({appId: "378901915518634", status: true, cookie: true});
-
-			      function postToFeed() {
-
-			        // calling the API ...
-			        var obj = {
-			          method: 'feed',
-			          link: 'http://defendyourfuckingvote.herokuapp.com',
-			          picture: 'http://defendyourfuckingvote.herokuapp.com/images/vote_fb.png',
-			          name: 'Defend Your Fucking Vote',
-			          caption: 'Give your political opinion, swearing and all.',
-			          description: 'The election is Tueday. It\'s time to get vocal.',
-			          redirect_uri: 'http://defendyourfuckingvote.herokuapp.com'
-			        };
-
-			        function callback(response) {
-			          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-			        }
-
-			        FB.ui(obj, callback);
-			      }
-			    
-			    </script>
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=378901915518634";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://defendyourfuckingvote.herokuapp.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false"></div>
 		</div>
 		<h1>Defend your fucking<span class="big red"> vote.</span></h1>
 		<div ng-view></div>
