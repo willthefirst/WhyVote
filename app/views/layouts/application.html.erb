@@ -9,40 +9,43 @@
   <meta property="fb:app_id" content="378901915518634" />
   <meta property="og:title" content="Defend Your F***ing Vote" />
   <meta property="og:type" content="cause" />
-  <meta property="og:url" content="https://defendyourfuckingvote.herokuapp.com" />
+  <meta property="og:url" content="http://defendyourfuckingvote.herokuapp.com" />
   <meta property="og:image" content="http://defendyourfuckingvote.herokuapp.com/images/vote_fb.png" />
   <meta property="og:site_name" content="Defend Your F***ing Vote" />
   <meta property="fb:admins" content="1064730089" />
 </head>
 <body>
-	<div id="fb-root"></div>
-	<script>
-	  window.fbAsyncInit = function() {
-	    // init the FB JS SDK
-	    FB.init({
-	      appId      : '378901915518634', // App ID from the App Dashboard
-	      channelUrl : 'https://defendyourfuckingvote.herokuapp.com', // Channel File for x-domain communication
-	      status     : true, // check the login status upon init?
-	      cookie     : true, // set sessions cookies to allow your server to access the session?
-	      xfbml      : true  // parse XFBML tags on this page?
-	    });
-
-	    // Additional initialization code such as adding Event Listeners goes here
-
-	  };
-
-	  // Load the SDK's source Asynchronously
-	  (function(d, debug){
-	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement('script'); js.id = id; js.async = true;
-	     js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
-	     ref.parentNode.insertBefore(js, ref);
-	   }(document, /*debug*/ true));
-	</script>
 	<div id="global-wrapper">
 		<div class="sn">
-			<div class="fb-like" data-href="https://defendyourfuckingvote.herokuapp.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false"></div>
+			<div id='fb-root'></div>
+			    <script src='http://connect.facebook.net/en_US/all.js'></script>
+			    <p><a onclick='postToFeed(); return false;'>Post to Feed</a></p>
+			    <p id='msg'></p>
+
+			    <script> 
+			      FB.init({appId: "378901915518634", status: true, cookie: true});
+
+			      function postToFeed() {
+
+			        // calling the API ...
+			        var obj = {
+			          method: 'feed',
+			          link: 'http://defendyourfuckingvote.herokuapp.com',
+			          picture: 'http://defendyourfuckingvote.herokuapp.com/images/vote_fb.png',
+			          name: 'Defend Your Fucking Vote',
+			          caption: 'Give your political opinion, swearing and all.',
+			          description: 'The election is Tueday. It\'s time to get vocal.',
+			          redirect_uri: 'http://defendyourfuckingvote.herokuapp.com'
+			        };
+
+			        function callback(response) {
+			          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+			        }
+
+			        FB.ui(obj, callback);
+			      }
+			    
+			    </script>
 		</div>
 		<h1>Defend your fucking<span class="big red"> vote.</span></h1>
 		<div ng-view></div>
