@@ -9,7 +9,7 @@
   <meta property="fb:app_id" content="378901915518634" />
   <meta property="og:title" content="Defend Your F***ing Vote" />
   <meta property="og:type" content="cause" />
-  <meta property="og:url" content="http://defendyourfuckingvote.herokuapp.com" />
+  <meta property="og:url" content="https://defendyourfuckingvote.herokuapp.com" />
   <meta property="og:image" content="http://defendyourfuckingvote.herokuapp.com/images/vote_fb.png" />
   <meta property="og:site_name" content="Defend Your F***ing Vote" />
   <meta property="fb:admins" content="1064730089" />
@@ -21,7 +21,7 @@
 	    // init the FB JS SDK
 	    FB.init({
 	      appId      : '378901915518634', // App ID from the App Dashboard
-	      channelUrl : 'defendyourfuckingvote.herokuapp.com', // Channel File for x-domain communication
+	      channelUrl : 'https://defendyourfuckingvote.herokuapp.com', // Channel File for x-domain communication
 	      status     : true, // check the login status upon init?
 	      cookie     : true, // set sessions cookies to allow your server to access the session?
 	      xfbml      : true  // parse XFBML tags on this page?
@@ -43,7 +43,8 @@
 	<div id="global-wrapper">
 		<div class="sn">
 			<div class="fb-like" data-href="https://defendyourfuckingvote.herokuapp.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false"></div>
-
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://defendyourfuckingvote.herokuapp.com" data-text="Guys. Defend your fucking vote. Come on." data-via="willthefirst" data-related="saiko_chriskun" data-hashtags="defendyourvote">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 		<h1>Defend your fucking<span class="big red"> vote.</span></h1>
 		<div ng-view></div>
