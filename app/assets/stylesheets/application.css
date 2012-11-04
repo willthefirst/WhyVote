@@ -169,4 +169,15 @@
 }
 
 
+.facebooks {
+	display: inline-block;
+	padding: 10px;
+	color: #ff0000; 
+}
+
+.facebooks a { 
+	color: inherit;
+}
+
+
 
